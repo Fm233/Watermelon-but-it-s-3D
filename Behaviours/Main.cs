@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    public InputSenderPC inputSender;
-    public InputSender inputSenderConstant;
+    public InputSender inputSender;
+    public InputSenderConstant inputSenderConstant;
     public FruitFactoryStandard fruitFactoryStandard;
     public OutputRenderer outputRenderer;
     public Failer preFailer;

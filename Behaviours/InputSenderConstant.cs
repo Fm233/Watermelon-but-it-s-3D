@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class InputSender : MonoBehaviour, ISpawnSender, IResetable, IRandomReceiver
+public class InputSenderConstant : MonoBehaviour, ISpawnSender, IResetable, IRandomReceiver
 {
-    public AudioClip clip;
-
-    Action<AudioClip> audioReceiver;
     Action<Vector3, int> spawnAction;
     IRandomProvider random;
-
-    public void AddAudioReceiver(Action<AudioClip> action)
-    {
-        audioReceiver += action;
-    }
 
     public void AddSpawnReceiver(Action<Vector3, int> action)
     {
@@ -33,7 +25,5 @@ public class InputSender : MonoBehaviour, ISpawnSender, IResetable, IRandomRecei
     public void Send(Vector3 pos)
     {
         spawnAction(pos, random.Get());
-        random.Randomize(5);
-        audioReceiver(clip);
     }
 }
