@@ -32,6 +32,7 @@ public class InputSender : MonoBehaviour, ISpawnSender, IResetable, IRandomRecei
 
     public void Send(Vector3 pos)
     {
+        if (UI.on) return;
         spawnAction(pos, random.Get());
         random.Randomize(5);
         audioReceiver(clip);

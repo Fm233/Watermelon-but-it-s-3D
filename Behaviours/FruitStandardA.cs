@@ -114,6 +114,7 @@ public class FruitStandardA : FruitStandard
     public override void Hide(bool state)
     {
         GetComponent<Collider>().enabled = !state;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public override Color GetColor()

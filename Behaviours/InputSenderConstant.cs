@@ -24,6 +24,7 @@ public class InputSenderConstant : MonoBehaviour, ISpawnSender, IResetable, IRan
 
     public void Send(Vector3 pos)
     {
+        if (UI.on) return;
         spawnAction(pos, random.Get());
     }
 }
